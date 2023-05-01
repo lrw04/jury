@@ -7,14 +7,17 @@
         "size": "10M",
         "memory": 512,
         "time": 1000,
+        "checker": {
+            "type": "diff"
+        },
         "tests": [
             {
                 "input": "1 2",
-                "output": "3"
+                "answer": "3"
             },
             {
                 "input": "4 5",
-                "output": "9"
+                "answer": "9"
             }
         ]
     }
