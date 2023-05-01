@@ -1,0 +1,21 @@
+{
+    "submission": {
+        "language": "cpp",
+        "source": "#include <iostream>\nusing namespace std; int main() {int a, b; cin >> a >> b; cout << a + b << endl;}"
+    },
+    "problem": {
+        "size": "10M",
+        "memory": 512,
+        "time": 1000,
+        "tests": [
+            {
+                "input": "1 2",
+                "output": "3"
+            },
+            {
+                "input": "4 5",
+                "output": "9"
+            }
+        ]
+    }
+}
