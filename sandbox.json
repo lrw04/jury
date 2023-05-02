@@ -6,32 +6,68 @@
                 "apk add gcc"
             ],
             "filename": "solution.c",
-            "compile": "/usr/bin/gcc -Wall -std=c17 -O3 solution.c -o solution -lm",
-            "run": "./solution"
+            "compile": [
+                "/usr/bin/gcc",
+                "-Wall",
+                "-std=c17",
+                "-O3",
+                "solution.c",
+                "-o",
+                "solution",
+                "-lm"
+            ],
+            "run": [
+                "./solution"
+            ]
         },
         "cpp": {
             "install": [
                 "apk add g++"
             ],
             "filename": "solution.cpp",
-            "compile": "/usr/bin/g++ -Wall -std=c++20 -O3 solution.cpp -o solution -lm",
-            "run": "./solution"
+            "compile": [
+                "/usr/bin/g++",
+                "-Wall",
+                "-std=c++17",
+                "-O3",
+                "solution.cpp",
+                "-o",
+                "solution",
+                "-lm"
+            ],
+            "run": [
+                "./solution"
+            ]
         },
-        "py": {
+        "python": {
             "install": [
                 "apk add python3"
             ],
             "filename": "solution.py",
-            "compile": "python3 -m py_compile solution.py",
-            "run": "/usr/bin/python3 solution.py"
+            "compile": [
+                "/usr/bin/python3",
+                "-m",
+                "py_compile",
+                "solution.py"
+            ],
+            "run": [
+                "/usr/bin/python3",
+                "solution.py"
+            ]
         },
         "java": {
             "install": [
-                "apk add openjdk17"
+                "apk add openjdk17-jdk"
             ],
             "filename": "Main.java",
-            "compile": "/usr/bin/javac Main.java",
-            "run": "/usr/bin/java Main"
+            "compile": [
+                "/usr/bin/javac",
+                "Main.java"
+            ],
+            "run": [
+                "/usr/bin/java",
+                "Main"
+            ]
         },
         "cl": {
             "install": [

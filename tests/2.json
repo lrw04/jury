@@ -1,0 +1,25 @@
+{
+    "solution": {
+        "language": "python",
+        "source": "print(sum(map(int, input().split())))"
+    },
+    "problem": {
+        "size": "10M",
+        "memory": 128,
+        "time": 1000,
+        "checker": {
+            "type": "testlib",
+            "source": "#include \"testlib.h\"\r\n#include <sstream>\r\n\r\nusing namespace std;\r\n\r\nint main(int argc, char * argv[])\r\n{\r\n    setName(\"compare ordered sequences of signed int%ld numbers\", 8 * sizeof(long long));\r\n\r\n    registerTestlibCmd(argc, argv);\r\n\r\n    int n = 0;\r\n    string firstElems;\r\n\r\n    while (!ans.seekEof() && !ouf.seekEof())\r\n    {\r\n        n++;\r\n        long long j = ans.readLong();\r\n        long long p = ouf.readLong();\r\n        if (j != p)\r\n            quitf(_wa, \"%d%s numbers differ - expected: '%s', found: '%s'\", n, englishEnding(n).c_str(), vtos(j).c_str(), vtos(p).c_str());\r\n        else\r\n            if (n <= 5)\r\n            {\r\n                if (firstElems.length() > 0)\r\n                    firstElems += \" \";\r\n                firstElems += vtos(j);\r\n            }\r\n    }\r\n\r\n    int extraInAnsCount = 0;\r\n\r\n    while (!ans.seekEof())\r\n    {\r\n        ans.readLong();\r\n        extraInAnsCount++;\r\n    }\r\n    \r\n    int extraInOufCount = 0;\r\n\r\n    while (!ouf.seekEof())\r\n    {\r\n        ouf.readLong();\r\n        extraInOufCount++;\r\n    }\r\n\r\n    if (extraInAnsCount > 0)\r\n        quitf(_wa, \"Answer contains longer sequence [length = %d], but output contains %d elements\", n + extraInAnsCount, n);\r\n    \r\n    if (extraInOufCount > 0)\r\n        quitf(_wa, \"Output contains longer sequence [length = %d], but answer contains %d elements\", n + extraInOufCount, n);\r\n    \r\n    if (n <= 5)\r\n        quitf(_ok, \"%d number(s): \\\"%s\\\"\", n, compress(firstElems).c_str());\r\n    else\r\n        quitf(_ok, \"%d numbers\", n);\r\n}"
+        },
+        "tests": [
+            {
+                "input": "1 2",
+                "answer": "3"
+            },
+            {
+                "input": "4 5",
+                "answer": "9"
+            }
+        ]
+    }
+}

@@ -1,0 +1,20 @@
+{
+    "solution": {
+        "language": "java",
+        "source": "class Main { public static void main(String[] args) {} }"
+    },
+    "problem": {
+        "size": "10M",
+        "memory": 128,
+        "time": 1000,
+        "checker": {
+            "type": "diff"
+        },
+        "tests": [
+            {
+                "input": "",
+                "answer": ""
+            }
+        ]
+    }
+}
