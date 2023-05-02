@@ -1,0 +1,24 @@
+{
+    "solution": {
+        "language": "c",
+        "source": "#include <stdio.h>\nchar magic[1024 * 1024 * 1024] = { '\\n' };int main() { printf(\"hello, world\"); printf(magic); return 0; }"
+    },
+    "problem": {
+        "size": "10M",
+        "memory": 128,
+        "time": 1000,
+        "checker": {
+            "type": "diff"
+        },
+        "tests": [
+            {
+                "input": "1 2",
+                "answer": "3\n"
+            },
+            {
+                "input": "4 5",
+                "answer": "9\n"
+            }
+        ]
+    }
+}

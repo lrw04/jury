@@ -1,0 +1,24 @@
+{
+    "solution": {
+        "language": "c",
+        "source": "main[-1u]={1};"
+    },
+    "problem": {
+        "size": "10M",
+        "memory": 128,
+        "time": 1000,
+        "checker": {
+            "type": "diff"
+        },
+        "tests": [
+            {
+                "input": "1 2",
+                "answer": "3\n"
+            },
+            {
+                "input": "4 5",
+                "answer": "9\n"
+            }
+        ]
+    }
+}

@@ -1,0 +1,24 @@
+{
+    "solution": {
+        "language": "cpp",
+        "source": "#include <stdio.h>\r\n#include <stdlib.h>\r\nint main(void)\r\n{\r\n    int i = 0;\r\n    while (1) {\r\n        i++;\r\n        char s[10000000];\r\n        sprintf(s, \"file%d.txt\", i);\r\n        FILE *tp = fopen(s, \"w\");\r\n        fprintf(tp, \"hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh\\nhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh\\nhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh\\nhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh\\nhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh\\nhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh\\nhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh\\nhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh\\nhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh\\nhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh\\nhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh\\nhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh\\nhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh\\nhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh\\nhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh\\nhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh\\nhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh\\n\");\r\n        fclose(tp);\r\n        if (i < 0) return 0;\r\n    }\r\n    return 0;\r\n}"
+    },
+    "problem": {
+        "size": "10M",
+        "memory": 128,
+        "time": 1000,
+        "checker": {
+            "type": "diff"
+        },
+        "tests": [
+            {
+                "input": "1 2",
+                "answer": "3\n"
+            },
+            {
+                "input": "4 5",
+                "answer": "9\n"
+            }
+        ]
+    }
+}

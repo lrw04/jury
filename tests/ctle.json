@@ -1,0 +1,24 @@
+{
+    "solution": {
+        "language": "cpp",
+        "source": "struct x struct z<x(x(x(x(x(x(x(x(x(x(x(x(x(x(x(x(x(y,x(y><y*,x(y*w>v<y*,w,x{}"
+    },
+    "problem": {
+        "size": "10M",
+        "memory": 128,
+        "time": 1000,
+        "checker": {
+            "type": "diff"
+        },
+        "tests": [
+            {
+                "input": "1 2",
+                "answer": "3\n"
+            },
+            {
+                "input": "4 5",
+                "answer": "9\n"
+            }
+        ]
+    }
+}

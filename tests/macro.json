@@ -1,0 +1,24 @@
+{
+    "solution": {
+        "language": "cpp",
+        "source": "int f(int num) {\r\n    return num;\r\n}\r\n#define TEN(i, t) (t[++i] = f(i), t[++i] = f(i), t[++i] = f(i), t[++i] = f(i), t[++i] = f(i), t[++i] = f(i), t[++i] = f(i), t[++i] = f(i), t[++i] = f(i))\r\n#define HUN(i, t) (TEN(i, t),TEN(i, t),TEN(i, t),TEN(i, t),TEN(i, t),TEN(i, t),TEN(i, t),TEN(i, t),TEN(i, t),TEN(i, t))\r\n#define THO(i, t) (HUN(i, t),HUN(i, t),HUN(i, t),HUN(i, t),HUN(i, t),HUN(i, t),HUN(i, t),HUN(i, t),HUN(i, t),HUN(i, t))\r\n#define TTT(i, t) (THO(i, t),THO(i, t),THO(i, t),THO(i, t),THO(i, t),THO(i, t),THO(i, t),THO(i, t),THO(i, t),THO(i, t))\r\n#define YYY(i, t) (TTT(i, t),TTT(i, t),TTT(i, t),TTT(i, t),TTT(i, t),TTT(i, t),TTT(i, t),TTT(i, t),TTT(i, t),TTT(i, t))\r\n#define UUU(i, t) (YYY(i, t),YYY(i, t),YYY(i, t),YYY(i, t),YYY(i, t),YYY(i, t),YYY(i, t),YYY(i, t),YYY(i, t),YYY(i, t))\r\n#define III(i, t) (UUU(i, t),UUU(i, t),UUU(i, t),UUU(i, t),UUU(i, t),UUU(i, t),UUU(i, t),UUU(i, t),UUU(i, t),UUU(i, t))\r\n#define OOO(i, t) (III(i, t),III(i, t),III(i, t),III(i, t),III(i, t),III(i, t),III(i, t),III(i, t),III(i, t),III(i, t))\r\n#define PPP(i, t) (OOO(i, t),OOO(i, t),OOO(i, t),OOO(i, t),OOO(i, t),OOO(i, t),OOO(i, t),OOO(i, t),OOO(i, t),OOO(i, t))\r\nint arr[99999999999];\r\nint main(int argc, char const *argv[])\r\n{\r\n    int i = 0;\r\n    PPP(i, arr);\r\n    return 0;\r\n}"
+    },
+    "problem": {
+        "size": "10M",
+        "memory": 128,
+        "time": 1000,
+        "checker": {
+            "type": "diff"
+        },
+        "tests": [
+            {
+                "input": "1 2",
+                "answer": "3\n"
+            },
+            {
+                "input": "4 5",
+                "answer": "9\n"
+            }
+        ]
+    }
+}
