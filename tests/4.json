@@ -1,7 +1,7 @@
 {
     "solution": {
-        "language": "java",
-        "source": "class Main { public static void main(String[] args) {} }"
+        "language": "c",
+        "source": "int main() {}"
     },
     "problem": {
         "size": "10M",

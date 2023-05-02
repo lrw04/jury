@@ -1,7 +1,7 @@
 {
     "solution": {
-        "language": "cpp",
-        "source": "#include <iostream>\nusing namespace std; int main() { int a, b; cin >> a >> b; cout << a + b; }"
+        "language": "cl",
+        "source": "(prin1 (+ (read) (read)))"
     },
     "problem": {
         "size": "10M",
@@ -13,11 +13,11 @@
         "tests": [
             {
                 "input": "1 2",
-                "answer": "3\n"
+                "answer": "3"
             },
             {
                 "input": "4 5",
-                "answer": "9\n"
+                "answer": "9"
             }
         ]
     }

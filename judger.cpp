@@ -354,7 +354,7 @@ int root_main(void *arg) {
                 "/tmp/judge", cgroup,
                 submission["problem"]["time"].get<int>() * 2,
                 submission["problem"]["memory"].get<ll>() * 2, COMPILE_PIDS, "",
-                {"/usr/bin/diff", "output", "answer"});
+                {"/usr/bin/diff", "-Z", "output", "answer"});
             if (chk_res.verdict != verdict_t::ok) {
                 j["verdict"] = "WA";
                 break;

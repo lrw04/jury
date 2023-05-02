@@ -57,6 +57,7 @@ int main(int argc, char **argv) {
         cerr << "Extraction failed" << endl;
         return EXIT_FAILURE;
     }
+    mkdir((output + "/usr/include").c_str(), 0777);
     copy_file("testlib.h", output + "/usr/include/testlib.h");
     unlink("rootfs.tar.gz");
     unlink("testlib.h");
@@ -64,6 +65,9 @@ int main(int argc, char **argv) {
     copy_file(argv[1], output + "/sandbox.json");
     chroot(argv[2]);
     chdir("/");
+    for (const auto &cmd : sandbox_config["run"]) {
+        system(cmd.get<string>().c_str());
+    }
     for (const auto &[lang, prop] : sandbox_config["languages"].items()) {
         cerr << "Installing " << lang << endl;
         for (const auto &cmd : prop["install"]) {
