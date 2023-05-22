@@ -91,7 +91,7 @@ int pivot_root(const char *new_root, const char *put_old) {
 }
 
 const int COMPILE_TIME = 5000, COMPILE_MEM = 512, COMPILE_PIDS = 128,
-          EXTRA_TIME = 1000;
+          EXTRA_TIME = 1000, MSG_LEN = 10000;
 
 enum verdict_t { ok, tle, mle, re, sec, uke };
 
@@ -253,7 +253,7 @@ int root_main(void *arg) {
     if (read(uidpipe[0], &ch, 1)) ERREXIT("read");
 
     json j;
-    j["verdict"] = string("AC");
+    j["verdict"] = string("ac");
     j["memory"] = -1;
     j["time"] = -1;
 
@@ -278,8 +278,9 @@ int root_main(void *arg) {
             "/tmp/run", cgroup, COMPILE_TIME, COMPILE_MEM, COMPILE_PIDS, "",
             convert_cmdline(sandbox_conf["languages"][lang]["compile"]));
         if (res.verdict != verdict_t::ok) {
-            j["verdict"] = "CE";
-            j["compiler_message"] = (res.stdout_content + res.stderr_content).substr(0, 10000);
+            j["verdict"] = "ce";
+            j["compiler_message"] =
+                (res.stdout_content + res.stderr_content).substr(0, MSG_LEN);
             cout << j << endl;
             return 0;
         }
@@ -293,8 +294,9 @@ int root_main(void *arg) {
                                {"/usr/bin/g++", "checker.cpp", "-o", "checker",
                                 "-lm", "-O3", "-Wall"});
         if (res.verdict != verdict_t::ok) {
-            j["verdict"] = "CCE";
-            j["compiler_message"] = (res.stdout_content + res.stderr_content).substr(0, 10000);
+            j["verdict"] = "ce";
+            j["compiler_message"] =
+                (res.stdout_content + res.stderr_content).substr(0, MSG_LEN);
             cout << j << endl;
             return 0;
         }
@@ -315,22 +317,23 @@ int root_main(void *arg) {
         if (res.verdict != verdict_t::ok) {
             switch (res.verdict) {
                 case verdict_t::mle:
-                    j["verdict"] = "MLE";
+                    j["verdict"] = "mle";
                     break;
                 case verdict_t::re:
-                    j["verdict"] = "RE";
+                    j["verdict"] = "re";
                     break;
                 case verdict_t::sec:
-                    j["verdict"] = "SEC";
+                    j["verdict"] = "sec";
                     break;
                 case verdict_t::tle:
-                    j["verdict"] = "TLE";
+                    j["verdict"] = "tle";
                     break;
                 case verdict_t::uke:
-                    j["verdict"] = "UKE";
+                    j["verdict"] = "uke";
                     break;
             }
-            j["message"] = (res.stdout_content + res.stderr_content).substr(0, 10000);
+            j["message"] =
+                (res.stdout_content + res.stderr_content).substr(0, MSG_LEN);
             break;
         }
 
@@ -346,7 +349,7 @@ int root_main(void *arg) {
                 submission["problem"]["memory"].get<ll>() * 2, COMPILE_PIDS, "",
                 {"./checker", "input", "output", "answer"});
             if (chk_res.verdict != verdict_t::ok) {
-                j["verdict"] = "WA";
+                j["verdict"] = "wa";
                 break;
             }
         } else {
@@ -356,7 +359,7 @@ int root_main(void *arg) {
                 submission["problem"]["memory"].get<ll>() * 2, COMPILE_PIDS, "",
                 {"/usr/bin/diff", "-Z", "output", "answer"});
             if (chk_res.verdict != verdict_t::ok) {
-                j["verdict"] = "WA";
+                j["verdict"] = "wa";
                 break;
             }
         }

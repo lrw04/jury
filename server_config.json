@@ -1,0 +1,7 @@
+{
+    "judger_key": "asdfuiop",
+    "server": "http://10.0.0.200:8080",
+    "sandbox": "sandbox",
+    "cgroup": "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/",
+    "judger_path": "build/judger"
+}

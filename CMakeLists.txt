@@ -11,18 +11,6 @@ FetchContent_Declare(json
     USES_TERMINAL_DOWNLOAD TRUE)
 FetchContent_MakeAvailable(json)
 
-FetchContent_Declare(fmt
-    GIT_REPOSITORY https://github.com/fmtlib/fmt
-    GIT_PROGRESS TRUE GIT_SHALLOW TRUE GIT_TAG 9.1.0
-    USES_TERMINAL_DOWNLOAD TRUE)
-FetchContent_MakeAvailable(fmt)
-
-FetchContent_Declare(libcurl
-    GIT_REPOSITORY https://github.com/curl/curl
-    GIT_PROGRESS TRUE GIT_SHALLOW TRUE GIT_TAG curl-8_0_1
-    USES_TERMINAL_DOWNLOAD TRUE)
-FetchContent_MakeAvailable(libcurl)
-
 set(REPROC++ ON)
 FetchContent_Declare(reproc
     GIT_REPOSITORY https://github.com/DaanDeMeyer/reproc
@@ -31,7 +19,7 @@ FetchContent_Declare(reproc
 FetchContent_MakeAvailable(reproc)
 
 add_executable(judger judger.cpp)
-target_link_libraries(judger fmt::fmt nlohmann_json::nlohmann_json)
+target_link_libraries(judger nlohmann_json::nlohmann_json)
 
 add_executable(builder builder.cpp)
 target_link_libraries(builder reproc++ nlohmann_json::nlohmann_json)
