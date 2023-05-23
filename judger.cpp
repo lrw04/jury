@@ -91,7 +91,7 @@ int pivot_root(const char *new_root, const char *put_old) {
 }
 
 const int COMPILE_TIME = 5000, COMPILE_MEM = 512, COMPILE_PIDS = 128,
-          EXTRA_TIME = 1000, MSG_LEN = 10000;
+          EXTRA_TIME = 1000, MSG_LEN = 0;
 
 enum verdict_t { ok, tle, mle, re, sec, uke };
 

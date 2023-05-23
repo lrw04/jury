@@ -15,11 +15,13 @@ def main():
     while True:
         r = requests.get(server + "/api/v1/get-submission")
         if r.status_code != 200:
-            print(r.status_code)
+            if r.status_code != 404:
+                print(r.status_code)
             time.sleep(1)
             continue
         j = r.json()
         id = j["id"]
+        print(f"Got task {id}")
         with open("task.json", "wb") as f:
             f.write(r.content)
         r = requests.post(server + "/api/v1/update-submission", data={
@@ -31,7 +33,8 @@ def main():
         })
         r.raise_for_status()
         proc = run([judger_path, sandbox, cgroup, "task.json"], capture_output=True)
-        res = json.loads(proc.stdout.decode("utf-8"))
+        print(proc.stdout.decode())
+        res = json.loads(proc.stdout.decode())
         r = requests.post(server + "/api/v1/update-submission", data={
             "submission": id,
             "key": key,
