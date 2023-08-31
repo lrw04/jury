@@ -1,5 +1,5 @@
 {
-    "base": "https://dl-cdn.alpinelinux.org/alpine/v3.17/releases/x86_64/alpine-minirootfs-3.17.3-x86_64.tar.gz",
+    "base": "https://dl-cdn.alpinelinux.org/alpine/v3.18/releases/x86_64/alpine-minirootfs-3.18.3-x86_64.tar.gz",
     "run": [
         "apk add diffutils"
     ],
@@ -81,6 +81,17 @@
                 "/usr/bin/sbcl",
                 "--script",
                 "solution.lisp"
+            ]
+        },
+        "scheme": {
+            "install": [
+                "apk add chez-scheme"
+            ],
+            "filename": "solution.ss",
+            "run": [
+                "chez",
+                "--program",
+                "solution.ss"
             ]
         }
     }
