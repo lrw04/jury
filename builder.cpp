@@ -65,6 +65,8 @@ int main(int argc, char **argv) {
     copy_file(argv[1], output + "/sandbox.json");
     chroot(argv[2]);
     chdir("/");
+    string env = string("PATH=/sbin:") + getenv("PATH");
+    putenv(env.data());
     for (const auto &cmd : sandbox_config["run"]) {
         system(cmd.get<string>().c_str());
     }

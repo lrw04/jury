@@ -14,7 +14,7 @@ FetchContent_MakeAvailable(json)
 set(REPROC++ ON)
 FetchContent_Declare(reproc
     GIT_REPOSITORY https://github.com/DaanDeMeyer/reproc
-    GIT_PROGRESS TRUE GIT_SHALLOW TRUE GIT_TAG v14.2.4
+    GIT_PROGRESS TRUE GIT_SHALLOW TRUE GIT_TAG main
     USES_TERMINAL_DOWNLOAD TRUE)
 FetchContent_MakeAvailable(reproc)
 
